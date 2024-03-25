@@ -3,15 +3,15 @@ import hashlib
 
 
 class MnemonicGenerator:
-    root = None
     entry_grid = []
 
     def __init__(self):
         self.keygen = PrivateKeyGenerator()
         self.root = tk.Tk()
         self.root.title("Mnemonic Generator")
+        self.root.iconphoto(False, tk.PhotoImage(file="./bitcoin.png"))
 
-        label = tk.Label(self.root, text="11자리 이진수 24개를 입력하세요.")
+        label = tk.Label(self.root, text="11자리 이진수 24개를 입력하세요. (마지막은 3자리 이진수)")
         label.grid(row=0, column=0, columnspan=3)
 
         count = 0
@@ -31,8 +31,11 @@ class MnemonicGenerator:
             self.entry_grid.append(row)
             count += 1
 
-        self.submit_button = tk.Button(self.root, text="생성", command=self.submit)
+        self.submit_button = tk.Button(self.root, text="Checksum 계산", command=self.submit)
         self.submit_button.grid(row=20, column=0, columnspan=3)
+
+        self.hash_label = tk.Label(self.root)
+        self.hash_label.grid(row=22, column=0, columnspan=3, pady=2)
 
     def run(self):
         self.root.mainloop()
@@ -87,7 +90,7 @@ class MnemonicGenerator:
                         input_text += entry.get()
 
             hashed_value = self.keygen.binary_to_sha256(input_text)
-            print("Hash value:", hashed_value)
+            self.hash_label.config(text=hashed_value)
 
             hex_string = hashed_value[:2]
             binary_string = bin(int(hex_string, 16))[2:]
