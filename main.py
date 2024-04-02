@@ -29,7 +29,7 @@ class MnemonicGenerator:
                 entry.grid(row=i+1, column=j, padx=5)
                 row.append(entry)
                 
-                numbering = f"{3*count+j+1}. "  # label 번호 부여
+                numbering = "{}. ".format(3*count+j+1)  # label 번호 부여
                 entry_label = tk.Label(self.root, text=numbering)
                 entry_label.grid(row=i+2, column=j, padx=5)
                 row.append(entry_label)
