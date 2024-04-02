@@ -22,7 +22,7 @@ https://wikidocs.net/8<br/>
 안쓰는 노트북이나 라즈베리파이 혹은 컴퓨터를 사용하여, 프로그램 사용 후 PC를 포맷해버리는 방법이 가장 좋습니다.<br/>
 (우분투 18.04 LTS 버전이 설치된 노트북에서도 돌려봤는데, tkinter 패키지만 설치해주니 잘 동작하더군요~)<br/><br/>
 
-## 2. bitcoin-main.zip을 다운받고 압축을 풀어줍니다.<br/> ##
+## 2. 소스코드 파일들을 다운받고 압축을 풀어줍니다.<br/> ##
 다운로드 받으면 아래와 같이 파일이 3개 들어있을텐데요,<br/>
 ![img2](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FZ5Iyw%2FbtsGeJ4yzoH%2FdLuNbQDShbDhhEMJxs7p31%2Fimg.png)<br/>
 
